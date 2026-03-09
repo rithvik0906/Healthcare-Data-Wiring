@@ -13,26 +13,51 @@
 
 <div class="container mt-5">
 
+
 <div class="title-box text-center mb-4">
-<h2>Patient Statistics</h2>
+	<h2>Patient Statistics</h2>
 </div>
 
-<table class="table table-bordered" id="summaryTable">
+<!-- Disease/Problem Summary Table -->
+<table class="table table-bordered mb-4" id="summaryTable">
+	<thead class="table-dark">
+		<tr>
+			<th>Problem</th>
+			<th>Total Patients</th>
+			<th>Male</th>
+			<th>Female</th>
+			<th>Average Age</th>
+		</tr>
+	</thead>
+	<tbody></tbody>
+</table>
 
-<thead class="table-dark">
+<!-- Charts Row (smaller, white background, below summary stats) -->
+<div class="row mb-4 justify-content-center">
+	<div class="col-md-6 mb-3">
+		<div class="p-3 bg-white rounded shadow-sm">
+			<h6 class="text-center mb-2">Disease Frequency</h6>
+			<canvas id="diseaseBarChart" width="480" height="270" style="background:#fff;"></canvas>
+		</div>
+	</div>
+	<div class="col-md-6 mb-3">
+		<div class="p-3 bg-white rounded shadow-sm">
+			<h6 class="text-center mb-2">Age Composition</h6>
+			<canvas id="agePieChart" width="480" height="270" style="background:#fff;"></canvas>
+		</div>
+	</div>
+</div>
 
-<tr>
-<th>Problem</th>
-<th>Total Patients</th>
-<th>Male</th>
-<th>Female</th>
-<th>Average Age</th>
-</tr>
-
-</thead>
-
-<tbody></tbody>
-
+<!-- Doctor Appointments Table -->
+<h4 class="mt-4">Doctor Appointments</h4>
+<table class="table table-bordered" id="doctorTable">
+	<thead class="table-secondary">
+		<tr>
+			<th>Doctor Name</th>
+			<th>Number of Appointments</th>
+		</tr>
+	</thead>
+	<tbody></tbody>
 </table>
 
 <div class="d-flex gap-3">
@@ -48,6 +73,8 @@
 </div>
 
 <script src="script.js"></script>
+<!-- Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </body>
 </html>
