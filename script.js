@@ -16,7 +16,6 @@ let patient = {
 	age: parseInt(document.getElementById("age").value),
 	gender: document.getElementById("gender").value,
 	phone: document.getElementById("phone").value,
-	email: document.getElementById("email").value,
 	problem: document.getElementById("problem").value,
 	appointmentDate: document.getElementById("appointmentDate").value,
 	appointmentTime: document.getElementById("appointmentTime").value,
@@ -128,10 +127,10 @@ return
 
 }
 
-let csv = "FirstName,LastName,Age,Gender,Phone,Email,Problem,AppointmentDate,AppointmentTime,DoctorName\n"
+let csv = "FirstName,LastName,Age,Gender,Phone,Problem,AppointmentDate,AppointmentTime,DoctorName\n"
 
 patients.forEach(p=>{
-	csv += `${p.fname},${p.lname},${p.age},${p.gender},${p.phone},${p.email},${p.problem},${p.appointmentDate},${p.appointmentTime},${p.doctorName}\n`
+    csv += `${p.fname},${p.lname},${p.age},${p.gender},${p.phone},${p.problem},${p.appointmentDate},${p.appointmentTime},${p.doctorName}\n`
 })
 
 let blob = new Blob([csv], {type:"text/csv"})
